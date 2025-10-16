@@ -41,3 +41,24 @@ $('a.smooth-scroll')
     }
   }
 });
+// scripts/main.js
+document.addEventListener('DOMContentLoaded', function () {
+  // init AOS (اگر لود شده)
+  if (window.AOS) {
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  }
+
+  // tooltip (اگر jQuery/Bootstrap لود شده)
+  if (window.jQuery) {
+    $(function () {
+      $('[rel="tooltip"]').tooltip();
+    });
+  }
+
+  // تست: اگر خواستی عناصر data-aos رو فوراً نشان بده (موقتی)
+  // document.querySelectorAll('[data-aos]').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+});
+
